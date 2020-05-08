@@ -1,0 +1,20 @@
+name: "CalCCA-Dashboard"
+navbar:
+  title: "CalCCA Data Dashboard"
+  left:
+    - text: "Home"
+      icon: fa-home
+      href: index.html
+    - text: "CAISO"
+      href: caiso.html
+    - text: "COVID-19 Impacts"
+      href: covid.html
+    - text: "Data"
+      href: data.html
+    - text: "Extensions"
+      href: extensions.html
+output_dir: "."
+output:
+  html_document:
+    include:
+      after_body: footer.html
