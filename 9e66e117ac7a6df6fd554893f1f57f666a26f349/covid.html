@@ -420,6 +420,9 @@ $(document).ready(function() {
 <p>This is the deep dive into COVID-19 impacts on aggregate energy supply and demand in California. I have defined the start of COVID-19 impacts as March 18th, 2020. The Bay area shelter-in-place declaration was announced on March 16th, and the statewide shelter-in-place was officially announced March 19th.</p>
 <div id="demand" class="section level2">
 <h2>Demand</h2>
+<!-- ### Basic Explainer -->
+<p><br></p>
+<p><br><br></p>
 <div id="ca-aggregate-effects" class="section level3">
 <h3>CA Aggregate Effects</h3>
 <p><br> <img src="covid_files/figure-html/COVID_1-1.png" width="100%" /></p>
@@ -456,8 +459,12 @@ $(document).ready(function() {
 <p>Two points to note, (1) demand fell and didn’t recover post-recession (called an L-shaped recession), and (2) it led to the differences between 2007 forecasts and true demand to be around 10%.</p>
 <div id="total-demand" class="section level3">
 <h3>Total Demand</h3>
-<p><img src="covid_files/figure-html/SCE_recession-1.png" width="90%" /><img src="covid_files/figure-html/SCE_recession-2.png" width="90%" /></p>
-<p><br><br> ### Peak Demand <img src="covid_files/figure-html/SCE_recession_peak-1.png" width="90%" /></p>
+<p><img src="covid_files/figure-html/SCE_recession-1.png" width="90%" /></p>
+<p><br><br></p>
+</div>
+<div id="peak-demand" class="section level3">
+<h3>Peak Demand</h3>
+<p><img src="covid_files/figure-html/SCE_recession_peak-1.png" width="90%" /></p>
 <p><a href="#top">Back to top</a></p>
 </div>
 </div>
@@ -467,6 +474,7 @@ $(document).ready(function() {
 <p>Data is hourly, and spans 2016 to the present. The weather data is comes from major airports throughout California.</p>
 <p>The main model uses a machine learning technique called a cross-validated LASSO, and the model is run on the equation <span class="math display">\[\text{Load}_{it} = \text{Solar Generation}_{it} + \text{Weather}_{it}\times \text{HoD}\times\text{DoW}\times\text{MoY} + \varepsilon_{it}\]</span> Load and solar generation is measured either at the state-level, or by TAC. Solar generation is utility scale solar, and is used as a surrogate variable to control for rooftop solar production. To control for hourly, weekly, and seasonal controls, I interact the weather data with the hour-of-the-day (HoD), day-of-the-week (DoW), and month-of-the-year (MoY). This allows for there to be different interacting signitures with the weather data, and picks up variation that leads to the daily peak demand, for example.</p>
 <p>The cross-validated LASSO is a technique that designed for prediction, and the nature of the LASSO with the training and testing regime of cross-validation only chooses elements of the model that lead to the least prediction error.</p>
+<hr />
 </div>
 </div>
 
@@ -518,7 +526,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2",
+      selectors: "h1,h2,h3",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
